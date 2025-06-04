@@ -150,3 +150,4 @@ C:\Users\acer\OneDrive\Desktop\Butun Backend folder\IdentityApp\IdentityApp\Iden
 C:\Users\acer\OneDrive\Desktop\Butun Backend folder\IdentityApp\IdentityApp\IdentityApp\obj\Debug\net8.0\IdentityApp.pdb
 C:\Users\acer\OneDrive\Desktop\Butun Backend folder\IdentityApp\IdentityApp\IdentityApp\obj\Debug\net8.0\IdentityApp.genruntimeconfig.cache
 C:\Users\acer\OneDrive\Desktop\Butun Backend folder\IdentityApp\IdentityApp\IdentityApp\obj\Debug\net8.0\ref\IdentityApp.dll
+C:\Users\acer\OneDrive\Desktop\Butun Backend folder\IdentityApp\IdentityApp\IdentityApp\obj\Debug\net8.0\IdentityApp.sourcelink.json
