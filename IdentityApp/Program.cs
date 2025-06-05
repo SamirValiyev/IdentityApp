@@ -21,7 +21,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole<Guid>>(opt =>
     opt.User.RequireUniqueEmail = true;
 
 
-}).AddEntityFrameworkStores<AppDbContext>();
+}).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 builder.Services.AddDbContext<AppDbContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("ConStr"));
