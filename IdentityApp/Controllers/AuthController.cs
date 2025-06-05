@@ -27,5 +27,17 @@ namespace IdentityApp.Controllers
             }
             return NoContent();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> ChangePassword(ChangePasswordDto dto,CancellationToken cancellationToken)
+        {
+            AppUser? user = await userManager.FindByIdAsync(dto.Id.ToString());
+            if(user is null)
+                return BadRequest(new {Message="Usern not Found"});
+            IdentityResult identityResult= await userManager.ChangePasswordAsync(user, dto.CurrentPassword, dto.NewPassword);
+            if (!identityResult.Succeeded)
+                return BadRequest(identityResult.Errors.Select(x => x.Description));
+            return NoContent();
+        }
     }
 }

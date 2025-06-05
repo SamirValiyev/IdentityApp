@@ -18,6 +18,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole<Guid>>(opt =>
     opt.Password.RequireUppercase=false;
     opt.Password.RequiredLength = 2;
 
+    opt.User.RequireUniqueEmail = true;
 
 
 }).AddEntityFrameworkStores<AppDbContext>();
