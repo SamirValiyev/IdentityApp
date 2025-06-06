@@ -19,7 +19,9 @@ builder.Services.AddIdentity<AppUser, IdentityRole<Guid>>(opt =>
     opt.Password.RequiredLength = 2;
 
     opt.User.RequireUniqueEmail = true;
-
+    opt.SignIn.RequireConfirmedEmail = true;
+    opt.Lockout.MaxFailedAccessAttempts = 3;
+    opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromSeconds(40);
 
 }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 builder.Services.AddDbContext<AppDbContext>(opt =>
