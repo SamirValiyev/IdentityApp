@@ -5,10 +5,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace IdentityApp.Context;
 
-public class AppDbContext : IdentityDbContext<AppUser, IdentityRole<Guid>, Guid>
+public class AppDbContext : IdentityDbContext<AppUser, AppRole, Guid,IdentityUserClaim<Guid>,AppUserRoles,IdentityUserLogin<Guid>,IdentityRoleClaim<Guid>,IdentityUserToken<Guid>>
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
 
+    }
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        
     }
 }

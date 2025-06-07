@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddIdentity<AppUser, IdentityRole<Guid>>(opt =>
+builder.Services.AddIdentity<AppUser, AppRole>(opt =>
 {
     opt.Password.RequireNonAlphanumeric=false;
     opt.Password.RequireDigit=false;

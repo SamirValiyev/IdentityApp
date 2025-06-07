@@ -72,11 +72,11 @@ namespace IdentityApp.Controllers
             AppUser? user=await userManager.Users.FirstOrDefaultAsync(x=>x.Email==dto.UsernameOrEmail || x.UserName==dto.UsernameOrEmail, cancellationToken);
             if (user is null) return BadRequest(new { Message = "User not Found" });
             SignInResult result= await signInManager.PasswordSignInAsync(user, dto.Password,false,true);
-            if (!user.EmailConfirmed)
-            {
-                user.EmailConfirmed = true;
-                await userManager.UpdateAsync(user);
-            }
+            //if (!user.EmailConfirmed)
+            //{
+            //    user.EmailConfirmed = true;
+            //    await userManager.UpdateAsync(user);
+            //}
             if (result.IsLockedOut)
             {
                 TimeSpan? timeSpan = user.LockoutEnd - DateTime.UtcNow;

@@ -94,5 +94,57 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IdentityApp.Controllers.RoleController",
+    "Method": "Create",
+    "RelativePath": "api/Role/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IdentityApp.Controllers.RoleController",
+    "Method": "GetAll",
+    "RelativePath": "api/Role/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "IdentityApp.Controllers.UserRolesController",
+    "Method": "Create",
+    "RelativePath": "api/UserRoles",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "roleId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "roleName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
