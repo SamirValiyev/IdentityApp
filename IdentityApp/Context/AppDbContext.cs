@@ -13,6 +13,12 @@ public class AppDbContext : IdentityDbContext<AppUser, AppRole, Guid,IdentityUse
     }
     protected override void OnModelCreating(ModelBuilder builder)
     {
-        
+        builder.Entity<AppUserRoles>().HasKey(x => new
+        {
+           x.RoleId,x.UserId   //composite keys
+        });
+        builder.Entity<IdentityUserLogin<Guid>>().HasKey(x=>x.UserId);
+        builder.Entity<IdentityUserToken<Guid>>().HasKey(x => x.UserId);
+
     }
 }

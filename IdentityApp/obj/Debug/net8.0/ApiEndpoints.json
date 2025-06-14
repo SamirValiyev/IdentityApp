@@ -135,11 +135,6 @@
         "IsRequired": false
       },
       {
-        "Name": "roleId",
-        "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
         "Name": "roleName",
         "Type": "System.String",
         "IsRequired": false

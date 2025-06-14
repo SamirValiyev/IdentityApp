@@ -19,7 +19,6 @@ namespace IdentityApp.Controllers
             user.FirstName = dto.FirstName;
             user.LastName = dto.LastName;
             user.UserName = dto.Username;
-
             IdentityResult identityResult= await userManager.CreateAsync(user,dto.Password);
             if (!identityResult.Succeeded) return BadRequest();
             return NoContent();
@@ -48,6 +47,7 @@ namespace IdentityApp.Controllers
         [HttpPost]
         public async Task<IActionResult> ChangePasswordWithToken(ChangePasswordWithTokenDto dto,CancellationToken cancellationToken)
         {
+        
             AppUser? user=await userManager.FindByEmailAsync(dto.Email);
             if (user is null) return BadRequest(new { Message = "User not Found" });
             IdentityResult identityResult=await userManager.ResetPasswordAsync(user,dto.Token,dto.NewPassword);
@@ -71,7 +71,7 @@ namespace IdentityApp.Controllers
         {
             AppUser? user=await userManager.Users.FirstOrDefaultAsync(x=>x.Email==dto.UsernameOrEmail || x.UserName==dto.UsernameOrEmail, cancellationToken);
             if (user is null) return BadRequest(new { Message = "User not Found" });
-            SignInResult result= await signInManager.PasswordSignInAsync(user, dto.Password,);
+            SignInResult result= await signInManager.PasswordSignInAsync(user, dto.Password,false,true);
             //if (!user.EmailConfirmed)
             //{
             //    user.EmailConfirmed = true;

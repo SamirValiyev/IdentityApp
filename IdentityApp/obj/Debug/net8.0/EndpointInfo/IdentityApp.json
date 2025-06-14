@@ -229,14 +229,6 @@
             }
           },
           {
-            "name": "roleId",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
             "name": "roleName",
             "in": "query",
             "schema": {
